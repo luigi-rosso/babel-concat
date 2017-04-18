@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jruchaud/babel-concat#readme",
   "dependencies": {
     "babel-core": "^6.7.4",
-    "source-map": "^0.4.2",
+    "source-map": "^0.5.6",
     "fs": "0.0.2"
   },
   "devDependencies": {

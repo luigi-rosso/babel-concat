@@ -130,18 +130,21 @@ exports.babelConcat = function(babelResults, options) {
     var concactMap = function(mapConsumer, offset) {
 
         mapConsumer.eachMapping(function(callback) {
-            map.addMapping({
-                source: callback.source,
-                original: {
-                    line: callback.originalLine,
-                    column: callback.originalColumn
-                },
-                generated: {
-                    line: offset + callback.generatedLine,
-                    column: callback.generatedColumn
-                },
-                name: callback.name
-            });
+            if(callback.source)
+            {
+                map.addMapping({
+                    source: callback.source,
+                    original: {
+                        line: callback.originalLine,
+                        column: callback.originalColumn
+                    },
+                    generated: {
+                        line: offset + callback.generatedLine,
+                        column: callback.generatedColumn
+                    },
+                    name: callback.name
+                });
+            }
 
             lastLine = offset + callback.generatedLine;
         });
